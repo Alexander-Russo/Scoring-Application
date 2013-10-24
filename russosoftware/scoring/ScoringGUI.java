@@ -334,7 +334,7 @@ public class ScoringGUI extends JFrame
 			switch(apScore)
 			{
 			case 1:
-				wholeNum = (totalScore / maxScore) * 10;
+				wholeNum = 60.00;
 				break;
 			case 2:
 				wholeNum = 60.00;
@@ -352,8 +352,13 @@ public class ScoringGUI extends JFrame
 				JOptionPane.showMessageDialog(null, "There was an issue when calculating the percentage");
 				break;
 			}
-			
-			calculated = (double)wholeNum + calcDecimal(totalScore, apScore);
+			if(apScore > 1)
+				calculated = (double)wholeNum + calcDecimal(totalScore, apScore);
+			else
+				calculated = wholeNum * calcDecimal(totalScore, apScore);
+			System.out.println("Whole Number: " + wholeNum);
+			System.out.println("Decimal: " + calcDecimal(totalScore, apScore));
+			System.out.println("Calculated Value: " + calculated);
 			return calculated;
 		}	
 		
@@ -364,7 +369,7 @@ public class ScoringGUI extends JFrame
 			double score = 0;
 			switch(apScore)
 			{
-			case 1: score = (totalScore / score1UpperBound) * 10;
+			case 1: score = (totalScore / score1UpperBound);
 				break;
 			case 2: score = ((totalScore - score1UpperBound) / (score2UpperBound - score1UpperBound)) * 10;
 				break;
