@@ -89,7 +89,7 @@ public class ScoringGUI extends JFrame
 		} 
 		catch (Exception e)
 		{
-			JOptionPane.showMessageDialog(null, "Failed to retrieve System Look and Feel Class. Reverting to Cross Platform Look and Feel.");
+			JOptionPane.showMessageDialog(null, "Failed to retrieve Cross Platform Look and Feel Class. Reverting to Default Look and Feel.");
 		}
 		
 		//Calculate Tab Panel
